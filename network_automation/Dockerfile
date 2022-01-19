@@ -9,7 +9,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt update \
     && curl -fsSL https://apt.releases.hashicorp.com/gpg | apt-key add - \
     && apt-add-repository -y ppa:ansible/ansible \
     && apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com focal main" \
-    && apt update && apt upgrade -y \
+    && apt update && apt upgrade -y && apt install sshpass \
     && apt -y --no-install-recommends install python3.8 telnet curl openssh-client nano vim-tiny \
     iputils-ping build-essential libssl-dev libffi-dev python3-pip \
     python3-setuptools python3-wheel python3-netmiko net-tools ansible terraform \
